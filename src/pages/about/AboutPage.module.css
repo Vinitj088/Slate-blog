@@ -1,0 +1,52 @@
+.aboutMeSection {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.aboutMeSection a {
+    font-weight: 600;
+}
+
+.aboutMeSection a:hover {
+    text-decoration: underline;
+}
+
+.aboutMeSection p {
+    padding-bottom: 1.25rem;
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+
+.image {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--lineBreak);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.25rem 0;
+}
+
+@media (min-width: 768px) {
+    .imageContainer {
+        grid-template-columns: auto 1fr;
+    }
+
+    .image {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}

@@ -1,0 +1,18 @@
+.latestPosts {
+    padding-bottom: 4rem;
+}
+
+.latestPostsTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--lineBreak);
+}
+
+.viewAllBtn {
+    background-color: var(--lineBreak);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 12px;
+}

@@ -1,0 +1,43 @@
+.welcomeContainer {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.image {
+    display: none;
+    width: 124px;
+    height: 124px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: var(--foregroundDarker);
+}
+
+.welcomeContainer h1 {
+    font-size: 1.5rem;
+    line-height: 42px;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+.welcomeContainer h1 a {
+    font-weight: 600;
+}
+
+.welcomeContainer h1 a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 1024px) {
+    .welcomeContainer {
+        padding: 5rem 0;
+    }
+
+    .image {
+        display: block;
+    }
+
+    .welcomeContainer h1 {
+        padding: 1.25rem;
+    }
+}

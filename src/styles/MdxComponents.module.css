@@ -1,0 +1,72 @@
+.h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.h2 {
+    font-size: 36px;
+    font-weight: 600;
+    padding-top: 4rem;
+}
+
+.h3 {
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 4rem;
+}
+
+.text {
+    font-size: 18px;
+    line-height: 32px;
+    padding-top: 1.5rem;
+}
+
+.a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--foreground);
+}
+
+.a:hover {
+    border-bottom: 2px solid var(--foreground);
+}
+
+.ol {
+    list-style: initial;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 1rem 0;
+    margin-left: 1.5rem;
+}
+
+.ol li {
+    list-style-type: -moz-ethiopic-numeric;
+    padding: 0.5rem 0;
+}
+
+.ul {
+    list-style: initial;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 1rem 0;
+    margin-left: 1.5rem;
+}
+
+.ul li {
+    list-style-type: initial;
+    padding: 0.5rem 0;
+}
+
+.image {
+    margin: 1.25rem 0;
+}
+
+@media (min-width: 1024px) {
+    .h1 {
+        font-size: 60px;
+    }
+
+    .image {
+        height: 50vh;
+        margin-bottom: 6rem;
+    }
+}
