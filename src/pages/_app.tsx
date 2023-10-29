@@ -19,7 +19,8 @@ const components = {
     a: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLAnchorElement> & AnchorHTMLAttributes<HTMLAnchorElement>) => <a {...props} target="_blank" rel="noreferrer noopener" className={mdxComponentsStyles.a}/>,
     ol: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLOListElement> & OlHTMLAttributes<HTMLOListElement>) => <ol {...props} className={mdxComponentsStyles.ol} />,
     ul: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLUListElement> & HTMLAttributes<HTMLUListElement>) => <ul {...props} className={mdxComponentsStyles.ul} />,
-    img: (props: any) => <Image {...props} loading="lazy" fill />,
+    img: (props: any) => <Image {...props} loading="lazy" alt="Description of the image" fill />,
+    
 };
 
 export default function App({Component, pageProps}: AppProps) {

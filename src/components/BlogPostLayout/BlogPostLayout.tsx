@@ -6,7 +6,7 @@ import Image from "next/image";
 import {useHeadsObserver} from "@/hooks/useHeadsObserver";
 import {useRouter} from "next/router";
 import * as process from "process";
-import {StaticImageData} from "next/dist/client/image";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import {TwitterLogo} from "phosphor-react";
 

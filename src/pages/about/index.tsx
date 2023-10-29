@@ -25,15 +25,15 @@ export default function About() {
                             </p>
                             <p>
                                 Your go-to source for the latest in tech news and all things related to technology. 
-                                We're dedicated to bringing you insightful and engaging content that keeps you informed 
+                                We are dedicated to bringing you insightful and engaging content that keeps you informed 
                                 about the fast-paced world of innovation. 👋
                             </p>
                             <p>
                                 At Slate, we believe that technology is not just a tool, 
                                 but a driving force that shapes our world. Our mission is to deliver accurate, timely, 
                                 and compelling information about the ever-evolving tech landscape. 
-                                Whether it's breakthroughs in artificial intelligence, the latest gadgets, 
-                                or in-depth analyses of industry trends, we've got you covered.
+                                Whether it is breakthroughs in artificial intelligence, the latest gadgets, 
+                                or in-depth analyses of industry trends, we have got you covered.
                             </p>
                             
                             <p>
