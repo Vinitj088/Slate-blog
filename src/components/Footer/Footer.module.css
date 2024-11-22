@@ -1,0 +1,25 @@
+.footer {
+    border-top: 1px solid var(--lineBreak);
+    padding: 1.25rem 0;
+    color: var(--foregroundDarker);
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.sourceCodeLink {
+    display: block;
+    padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sourceCodeLink {
+        padding-top: initial;
+    }
+}

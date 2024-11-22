@@ -1,0 +1,144 @@
+---
+title: Simple setup for dark and light theme toggle in NextJS
+publishedAt: 02/15/2023
+imageUrl: /images/3.webp
+authorURL: /images/pp.webp
+category: Code
+Excerpt: Are you looking to implement a dark and light theme on your NextJS website with a toggle switch? I will show you a super simple implementation, that will take you about 5 minutes to implement.
+---
+
+import BlogPostLayout from '@/components/BlogPostLayout';
+import BlogPostImage from '../../../public/images/3.webp';
+
+export default ({ title, publishedAt, children }) => <BlogPostLayout
+    title="Simple setup for dark and light theme toggle in NextJS"
+    description="Set up a dark and light theme with a toggle in NextJS using next-themes and NextJS CSS Modules or TailwindCSS."
+    publishedAt="10/15/2023"
+    keywords="reactjs, nextjs, tailwindcss, next-themes"
+    imageUrl={BlogPostImage}
+>{children}</BlogPostLayout>;
+
+Are you looking to implement a dark and light theme on your NextJS website with a toggle switch?
+I will show you a super simple implementation, that will take you about 5 minutes to implement.
+
+## What will we be using?
+
+As for this project we will be using a package named <span className="highlight">next-themes</span> and the default [NextJS CSS Modules](https://beta.nextjs.org/docs/styling/css-modules), but great news!
+The library we will be using next-themes works well with [Tailwind CSS](https://tailwindcss.com/) as well, if that is what you’re looking for.
+It will provide us with an easy solution to manage your website’s theme.
+
+## Getting started
+
+First we will need to install the necessary dependencies, for this we are assuming you already have Tailwind CSS installed if that is the route you are going.
+So let's install the main library we need which is <span className="highlight">next-themes</span> by running the command:
+
+```shell
+npm i next-themes
+```
+
+## Setting up next-themes
+
+Inside your <span className="highlight">_app.js</span> or <span className="highlight">_app.tsx</span> (depending on if you are using TypeScript in your project) we will wrap the <span className="highlight">Component</span> with a <span className="highlight">ThemeProvider</span> from next-themes.
+
+If you are using Tailwind CSS then you will also have to pass <span className="highlight">attribute="class"</span> to the <span className="highlight">ThemeProvider</span> else it is not necessary.
+
+This is what our _app.tsx file should look like after the change:
+
+```typescript
+import type { AppProps } from 'next/app'
+import { ThemeProvider } from "next-themes";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+      <ThemeProvider>
+          <Component {...pageProps} />
+      </ThemeProvider>
+  );
+}
+```
+
+## If using Tailwind CSS
+
+If you are using Tailwind CSS then this is an extra step where you have to add a property to your config file <span className="highlight">tailwindcss.config.js</span>.
+We need to tell Tailwind that we’re going to be changing the theme manually instead of purely relying on the users system preference.
+In order to do that we need to add the <span className="highlight">darkMore: "class"</span> property to the config as such:
+
+```typescript
+module.exports = {
+  darkMode: "class",
+  purge: [
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {},
+  variants: {},
+  plugins:[]
+};
+```
+
+## Default styles on globals.css
+
+If you are using Tailwind CSS then you can skip this step, because then you are basically ready to use <span className="highlight">dark:</span> on classes to use [Dark Mode](https://tailwindcss.com/docs/dark-mode).
+
+If you are not using Tailwind CSS let’s set up some default styles in our <span className="highlight">globals.css</span> file.
+Here we can set our default variables and what they should be in case the theme is set to “dark”:
+
+```css
+:root {
+    --background: #FFFFFF;
+    --foreground: #000000;
+}
+
+[data-theme='dark'] {
+    --background: #161B26;
+    --foreground: white;
+}
+```
+
+## Theme based on system preference
+
+We can also use the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media feature to detect if a user has a dark colour theme set on their operating system and set the websites default theme to be dark:
+
+```css
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+```
+
+## Creating a theme toggle button
+
+We have everything set up. Now we can simply use next-themes <span className="highlight">useTheme()</span> hook to find out the current theme on our website as well as to set another theme as active.
+
+Here is an example theme toggle component using next-themes to toggle the theme between light and dark:
+
+```typescript
+import {useTheme} from "next-themes";
+import {useEffect, useState} from "react";
+
+const ThemeToggle = () => {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
+    return (
+        <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+            Toggle theme
+        </button>
+    );
+}
+
+export default ThemeToggle;
+```
+
+Then you can simply use this component inside your navigation, header or wherever you prefer to have a theme toggle button.
+
+We are done, congratulations you have your light and dark themes implemented!
+
+🎉
