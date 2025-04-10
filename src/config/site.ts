@@ -20,7 +20,7 @@ export const siteConfig = {
   ],
   links: {
     twitter: "https://twitter.com/",
-    github: "https://github.com/",
+    github: "https://github.com/Vinitj088/Slate-blog",
     docs: "#",
   },
 }
